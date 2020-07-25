@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:import namespace="http://tempuri.org/MascaraTeste.xsd" />
+      <s:import schemaLocation="http://localhost:1406/WebService/WebService.asmx?schema=MascaraTeste" namespace="http://tempuri.org/MascaraTeste.xsd" />
+      <s:element name="Modifica">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DS">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://tempuri.org/MascaraTeste.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModificaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ModificaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+                <s:attribute fixed="http://tempuri.org/MascaraTeste.xsd" name="namespace" />
+                <s:attribute fixed="MSK_FORNECEDORDataTable" name="tableTypeName" />
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fillMascara">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="x">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://tempuri.org/MascaraTeste.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fillMascaraResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="x">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://tempuri.org/MascaraTeste.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getMascara">
+        <s:complexType />
+      </s:element>
+      <s:element name="getMascaraResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getMascaraResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+                <s:attribute fixed="http://tempuri.org/MascaraTeste.xsd" name="namespace" />
+                <s:attribute fixed="MSK_FORNECEDORDataTable" name="tableTypeName" />
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setMascara">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DS">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://tempuri.org/MascaraTeste.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setMascaraResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="setMascaraResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateMascara">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DS">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://tempuri.org/MascaraTeste.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateMascaraResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="updateMascaraResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="DS">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://tempuri.org/MascaraTeste.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ModificaSoapIn">
+    <wsdl:part name="parameters" element="tns:Modifica" />
+  </wsdl:message>
+  <wsdl:message name="ModificaSoapOut">
+    <wsdl:part name="parameters" element="tns:ModificaResponse" />
+  </wsdl:message>
+  <wsdl:message name="fillMascaraSoapIn">
+    <wsdl:part name="parameters" element="tns:fillMascara" />
+  </wsdl:message>
+  <wsdl:message name="fillMascaraSoapOut">
+    <wsdl:part name="parameters" element="tns:fillMascaraResponse" />
+  </wsdl:message>
+  <wsdl:message name="getMascaraSoapIn">
+    <wsdl:part name="parameters" element="tns:getMascara" />
+  </wsdl:message>
+  <wsdl:message name="getMascaraSoapOut">
+    <wsdl:part name="parameters" element="tns:getMascaraResponse" />
+  </wsdl:message>
+  <wsdl:message name="setMascaraSoapIn">
+    <wsdl:part name="parameters" element="tns:setMascara" />
+  </wsdl:message>
+  <wsdl:message name="setMascaraSoapOut">
+    <wsdl:part name="parameters" element="tns:setMascaraResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateMascaraSoapIn">
+    <wsdl:part name="parameters" element="tns:updateMascara" />
+  </wsdl:message>
+  <wsdl:message name="updateMascaraSoapOut">
+    <wsdl:part name="parameters" element="tns:updateMascaraResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebServiceSoap">
+    <wsdl:operation name="Modifica">
+      <wsdl:input message="tns:ModificaSoapIn" />
+      <wsdl:output message="tns:ModificaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fillMascara">
+      <wsdl:input message="tns:fillMascaraSoapIn" />
+      <wsdl:output message="tns:fillMascaraSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getMascara">
+      <wsdl:input message="tns:getMascaraSoapIn" />
+      <wsdl:output message="tns:getMascaraSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setMascara">
+      <wsdl:input message="tns:setMascaraSoapIn" />
+      <wsdl:output message="tns:setMascaraSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateMascara">
+      <wsdl:input message="tns:updateMascaraSoapIn" />
+      <wsdl:output message="tns:updateMascaraSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServiceSoap" type="tns:WebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Modifica">
+      <soap:operation soapAction="http://tempuri.org/Modifica" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fillMascara">
+      <soap:operation soapAction="http://tempuri.org/fillMascara" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMascara">
+      <soap:operation soapAction="http://tempuri.org/getMascara" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setMascara">
+      <soap:operation soapAction="http://tempuri.org/setMascara" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateMascara">
+      <soap:operation soapAction="http://tempuri.org/updateMascara" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceSoap12" type="tns:WebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Modifica">
+      <soap12:operation soapAction="http://tempuri.org/Modifica" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fillMascara">
+      <soap12:operation soapAction="http://tempuri.org/fillMascara" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMascara">
+      <soap12:operation soapAction="http://tempuri.org/getMascara" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setMascara">
+      <soap12:operation soapAction="http://tempuri.org/setMascara" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateMascara">
+      <soap12:operation soapAction="http://tempuri.org/updateMascara" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebService">
+    <wsdl:port name="WebServiceSoap" binding="tns:WebServiceSoap">
+      <soap:address location="http://localhost:1406/WebService/WebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceSoap12" binding="tns:WebServiceSoap12">
+      <soap12:address location="http://localhost:1406/WebService/WebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
